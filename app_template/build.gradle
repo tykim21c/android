@@ -1,16 +1,5 @@
-buildscript {
-    repositories {
-        jcenter()
-    }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:0.13.1'
-    }
-}
 apply plugin: 'com.android.application'
-
-repositories {
-        jcenter()
-}
+apply plugin: 'signing'
 
 android {
     compileSdkVersion 21
@@ -30,8 +19,9 @@ android {
     }
     buildTypes {
         release {
-            runProguard false
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
         }
     }
 }
